@@ -26,26 +26,17 @@
 package java.lang;
 
 /**
- * The abstract class {@code Number} is the superclass of platform
- * classes representing numeric values that are convertible to the
- * primitive types {@code byte}, {@code double}, {@code float}, {@code
- * int}, {@code long}, and {@code short}.
- *
- * The specific semantics of the conversion from the numeric value of
- * a particular {@code Number} implementation to a given primitive
- * type is defined by the {@code Number} implementation in question.
- *
- * For platform classes, the conversion is often analogous to a
- * narrowing primitive conversion or a widening primitive conversion
- * as defined in <cite>The Java Language Specification</cite>
- * for converting between primitive types.  Therefore, conversions may
- * lose information about the overall magnitude of a numeric value, may
- * lose precision, and may even return a result of a different sign
- * than the input.
- *
- * See the documentation of a given {@code Number} implementation for
- * conversion details.
- *
+ * 抽象クラス{@code Number}は、数値を表し、プリミティブ型である{@code byte}、{@code double}、{@code float}、{@code int}、
+ * {@code long}、および{@code short}に変換可能なプラットフォームクラスのスーパークラスです。
+ * 特定の{@code Number}実装における数値の値から、指定されたプリミティブ型への変換の具体的な意味論は、当該{@code Number}実装によって定義されています。
+ * プラットフォームクラスの場合、変換は通常、<cite>Java言語仕様</cite>で定義されているプリミティブ型間の「縮小変換」または「拡大変換」と類似しています。
+ * そのため、次のような可能性があります：
+ * <ul>
+ *     <li>数値の全体的な大きさに関する情報が失われる</li>
+ *     <li>精度が失われる</li>
+ *     <li>入力とは異なる符号の結果が返される場合もある</li>
+ * </ul>
+ * 詳細な変換の挙動については、各{@code Number}実装のドキュメントを参照してください。
  * @author      Lee Boynton
  * @author      Arthur van Hoff
  * @jls 5.1.2 Widening Primitive Conversion
