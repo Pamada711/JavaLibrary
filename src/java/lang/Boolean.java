@@ -29,7 +29,6 @@ import jdk.internal.vm.annotation.IntrinsicCandidate;
 
 import java.lang.constant.Constable;
 import java.lang.constant.ConstantDescs;
-import java.lang.constant.DynamicConstantDesc;
 import java.util.Optional;
 
 /**
