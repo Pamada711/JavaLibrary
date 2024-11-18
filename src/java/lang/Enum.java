@@ -150,13 +150,10 @@ public abstract class Enum<E extends Enum<E>>
     }
 
     /**
-     * Compares this enum with the specified object for order.  Returns a
-     * negative integer, zero, or a positive integer as this object is less
-     * than, equal to, or greater than the specified object.
-     *
-     * Enum constants are only comparable to other enum constants of the
-     * same enum type.  The natural order implemented by this
-     * method is the order in which the constants are declared.
+     * この列挙型は、指定されたオブジェクトと順序を比較します。
+     * このオブジェクトが指定されたオブジェクトより小さい場合は負の整数を、等しい場合はゼロを、大きい場合は正の整数を返します。
+     * 列挙定数は、同じ列挙型の他の列挙定数とのみ比較可能です。
+     * このメソッドによって実装される自然順序は、定数が宣言された順番です。
      */
     public final int compareTo(E o) {
         Enum<?> other = (Enum<?>)o;
@@ -168,13 +165,9 @@ public abstract class Enum<E extends Enum<E>>
     }
 
     /**
-     * Returns the Class object corresponding to this enum constant's
-     * enum type.  Two enum constants e1 and  e2 are of the
-     * same enum type if and only if
-     *   e1.getDeclaringClass() == e2.getDeclaringClass().
-     * (The value returned by this method may differ from the one returned
-     * by the {@link Object#getClass} method for enum constants with
-     * constant-specific class bodies.)
+     * このメソッドは、この列挙定数の列挙型に対応する Class オブジェクトを返します。
+     * 2つの列挙定数 e1 と e2 が同じ列挙型であるのは、e1.getDeclaringClass() == e2.getDeclaringClass() の場合のみです。
+     * このメソッドが返す値は、列挙定数が定数固有のクラスボディを持つ場合、Object.getClass メソッドによって返される値と異なることがあります。
      *
      * @return the Class object corresponding to this enum constant's
      *     enum type
@@ -187,8 +180,8 @@ public abstract class Enum<E extends Enum<E>>
     }
 
     /**
-     * Returns an enum descriptor {@code EnumDesc} for this instance, if one can be
-     * constructed, or an empty {@link Optional} if one cannot be.
+     * このメソッドは、このインスタンスのために列挙型記述子（EnumDesc）を構築できる場合、その記述子を返します。
+     * もし構築できない場合は、空の Optional を返します。
      *
      * @return An {@link Optional} containing the resulting nominal descriptor,
      * or an empty {@link Optional} if one cannot be constructed.
@@ -202,18 +195,12 @@ public abstract class Enum<E extends Enum<E>>
     }
 
     /**
-     * Returns the enum constant of the specified enum class with the
-     * specified name.  The name must match exactly an identifier used
-     * to declare an enum constant in this class.  (Extraneous whitespace
-     * characters are not permitted.)
      *
-     * <p>Note that for a particular enum class {@code T}, the
-     * implicitly declared {@code public static T valueOf(String)}
-     * method on that enum may be used instead of this method to map
-     * from a name to the corresponding enum constant.  All the
-     * constants of an enum class can be obtained by calling the
-     * implicit {@code public static T[] values()} method of that
-     * class.
+     * 指定された列挙型クラスの指定された名前に対応する列挙定数を返します。
+     * 名前は、このクラスで列挙定数を宣言するために使用された識別子と正確に一致する必要があります（余分な空白文字は許可されません）。
+     * 特定の列挙型クラス T に対して、暗黙的に宣言された public static T valueOf(String) メソッドを使用することで、
+     * このメソッドの代わりに名前から対応する列挙定数を取得することができます。
+     * そのクラスのすべての列挙定数は、暗黙的に宣言された public static T[] values() メソッドを呼び出すことで取得できます。
      *
      * @param <T> The enum class whose constant is to be returned
      * @param enumClass the {@code Class} object of the enum class from which
@@ -246,7 +233,7 @@ public abstract class Enum<E extends Enum<E>>
     protected final void finalize() { }
 
     /**
-     * prevent default deserialization
+     * デフォルトのデシリアライズを防止する
      */
     @java.io.Serial
     private void readObject(ObjectInputStream in) throws IOException,
@@ -260,8 +247,7 @@ public abstract class Enum<E extends Enum<E>>
     }
 
     /**
-     * A <a href="{@docRoot}/java.base/java/lang/constant/package-summary.html#nominal">nominal descriptor</a> for an
-     * {@code enum} constant.
+     * 列挙定数のための名前上の記述子。
      *
      * @param <E> the type of the enum constant
      *
@@ -271,7 +257,7 @@ public abstract class Enum<E extends Enum<E>>
             extends DynamicConstantDesc<E> {
 
         /**
-         * Constructs a nominal descriptor for the specified {@code enum} class and name.
+         * 指定された列挙型クラスと名前に対する名前上の記述子を構築します。
          *
          * @param constantClass a {@link ClassDesc} describing the {@code enum} class
          * @param constantName the unqualified name of the enum constant
@@ -283,7 +269,7 @@ public abstract class Enum<E extends Enum<E>>
         }
 
         /**
-         * Returns a nominal descriptor for the specified {@code enum} class and name
+         * 指定された列挙型クラスと名前に対する名前上の記述子を返します。
          *
          * @param <E> the type of the enum constant
          * @param enumClass a {@link ClassDesc} describing the {@code enum} class
