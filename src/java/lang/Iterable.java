@@ -27,7 +27,6 @@ package java.lang;
 import java.util.Iterator;
 import java.util.Objects;
 import java.util.Spliterator;
-import java.util.Spliterators;
 import java.util.function.Consumer;
 
 /**
